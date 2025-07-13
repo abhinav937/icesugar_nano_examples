@@ -1,0 +1,9 @@
+# Pin constraints for multi-LED UART PWM controller on iCESugar-nano
+# Clock and UART
+set_io CLK D1    # 12 MHz clock from iCELink
+set_io RX A3     # UART receive pin
+
+# LED outputs (PWM controlled)
+set_io LED_B6 B6 # Onboard LED
+set_io LED_B4 B4 # PMOD pin
+set_io LED_C6 C6 # PMOD pin 

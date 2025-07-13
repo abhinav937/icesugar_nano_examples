@@ -1,0 +1,22 @@
+# UART PWM LED Controller - Pin Constraints for iCESugar-nano
+# ------------------------------------------------------------
+# This file maps logical signals to physical FPGA pins for the UART PWM LED project.
+# Compatible with iCESugar-nano board and iCELink USB CDC interface.
+
+# Clock input (12 MHz from iCELink)
+set_io CLK D1
+
+# UART RX pin (connected to iCELink USB CDC)
+set_io RX A3
+
+# UART TX pin (loopback - connected to iCELink USB CDC)
+set_io TX B3
+
+# LED output (onboard LED)
+set_io LED B6
+
+# Notes:
+# - clk: 12 MHz clock from iCELink USB CDC interface
+# - RX: UART receive pin, connected to iCELink
+# - LED: PWM output to onboard LED
+# - Pin assignments based on iCESugar-nano schematic 
