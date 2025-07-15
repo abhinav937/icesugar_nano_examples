@@ -12,8 +12,8 @@ module uart_pwm_led (
 ); 
 
 	 // Parameters 
-	 parameter CLK_FREQ = 72_000_000; 	 // 12 MHz clock frequency 
-	 parameter BAUD_RATE = 921600; 		 // UART baud rate 
+	 parameter CLK_FREQ = 12_000_000; 	 // 12 MHz clock frequency 
+	 parameter BAUD_RATE = 115200; 		 // UART baud rate 
 	 parameter PWM_FREQ = 1000; 		 // PWM frequency in Hz 
 	  
 	 // Calculated parameters 

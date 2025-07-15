@@ -63,13 +63,32 @@ def set_led_brightness(led_id, percentage, port=None):
 
 def main():
     """Parse command-line arguments and set LED brightness."""
-    parser = argparse.ArgumentParser(description="Set FPGA LED brightness via serial.")
+    parser = argparse.ArgumentParser(
+        description="Set FPGA LED brightness via serial.",
+        epilog="""
+Example usage:
+  python3 set_led_brightness.py -l 1 -b 75
+  python3 set_led_brightness.py --led 2 --brightness 100 --port /dev/ttyACM0
+
+LED IDs:
+  0 = B6 (default LED)
+  1 = B4
+  2 = C6
+
+Brightness:
+  0 = off
+  100 = full brightness
+
+If --port is not specified, the script will try to auto-detect the iCELink serial port.
+""",
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument('-l', '--led', type=int, required=True,
-                        help='LED ID (0=B6, 1=B4, 2=C6)')
+                        help='LED ID (0 = B6, 1 = B4, 2 = C6)')
     parser.add_argument('-b', '--brightness', type=int, required=True,
-                        help='Brightness percentage (0-100)')
+                        help='Brightness percentage (0-100, where 0 = off, 100 = full brightness)')
     parser.add_argument('-p', '--port', type=str,
-                        help='Serial port (e.g., /dev/ttyACM0)')
+                        help='Serial port (e.g., /dev/ttyACM0). If omitted, auto-detects common iCELink ports.')
     args = parser.parse_args()
     set_led_brightness(args.led, args.brightness, args.port)
 
