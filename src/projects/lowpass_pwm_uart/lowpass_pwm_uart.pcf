@@ -1,0 +1,17 @@
+# iCESugar Nano PCF for Low-Pass PWM LED Demo
+# Maps the filtered PWM output to B6 LED
+
+# On-board 12MHz clock
+set_io CLK D1
+
+set_io --warn-no-port PMOD1 B4
+set_io --warn-no-port PMOD2 C6
+set_io --warn-no-port PMOD3 B5
+set_io --warn-no-port PMOD4 E3
+set_io --warn-no-port PMOD5 E1
+set_io --warn-no-port PMOD6 C2
+set_io --warn-no-port PMOD7 B1
+set_io --warn-no-port PMOD8 A1
+
+# B6 LED output (on-board LED)
+set_io B6 B6 
