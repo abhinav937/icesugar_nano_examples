@@ -11,7 +11,11 @@ This project demonstrates how to turn OFF the B4 LED on the iCESugar Nano board 
 - When the FPGA is programmed, the B4 LED will turn on, indicating the device is ready.
 
 ## Usage
-1. Synthesize and upload the design to your iCESugar Nano FPGA.
+1. Build and program the design using the [Lattice_NanoIce](https://github.com/abhinav937/Lattice_NanoIce) flash tool:
+   ```bash
+   cd src/projects/fpga_done_led
+   flash fpga_done_led.v fpga_done_led.pcf
+   ```
 2. The B4 LED should turn off immediately after programming.
 
 ## Pin Mapping

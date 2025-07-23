@@ -23,20 +23,23 @@ This project demonstrates a simple 8-bit microcontroller implemented in Verilog,
   - `0xAA` for reset (PWM_RESET_OK)
 
 ## Usage
-1. Synthesize and upload the design to your iCESugar Nano FPGA using the `pwm_microcontroller.v` file as the top-level module.
+1. Build and program the design using the [Lattice_NanoIce](https://github.com/abhinav937/Lattice_NanoIce) flash tool.
 2. Connect UART RX (A3) and TX (B3) to your host (USB-UART, microcontroller, etc.).
 3. Use a serial terminal or Python script to send commands and receive ACKs.
 
-### Building the Project
+### Building and Programming the Project
 ```bash
 # Navigate to the project directory
 cd src/projects/pwm_microcontroller
 
-# Build using your preferred FPGA toolchain
-# Example with yosys/nextpnr:
-yosys -p "synth_ice40 -top pwm_microcontroller -json pwm_microcontroller.json" pwm_microcontroller.v
-nextpnr-ice40 --up5k --package sg48 --pcf pwm_microcontroller.pcf --json pwm_microcontroller.json --asc pwm_microcontroller.asc
-icepack pwm_microcontroller.asc pwm_microcontroller.bin
+# Build and program using the flash tool
+flash pwm_microcontroller.v pwm_microcontroller.pcf
+
+# For verbose output
+flash pwm_microcontroller.v pwm_microcontroller.pcf --verbose
+
+# Build only (skip programming)
+flash pwm_microcontroller.v pwm_microcontroller.pcf --build-only
 ```
 
 ### Example Python Host Code

@@ -41,7 +41,11 @@ Refer to [`lowpass_pwm_uart.pcf`](lowpass_pwm_uart.pcf) for exact pin assignment
 - `lowpass_pwm_uart.pcf` — Pin constraint file for iCESugar Nano
 
 ## Usage
-1. Synthesize and upload the design to your iCESugar Nano FPGA using your preferred toolchain (e.g., Yosys, NextPNR, IcePack).
+1. Build and program the design using the [Lattice_NanoIce](https://github.com/abhinav937/Lattice_NanoIce) flash tool:
+   ```bash
+   cd src/projects/lowpass_pwm_uart
+   flash lowpass_pwm_uart.v lowpass_pwm_uart.pcf
+   ```
 2. Observe the on-board B6 LED smoothly changing brightness.
 3. Watch the PMOD LEDs light up in a cumulative bar graph pattern as the filtered value increases.
 
