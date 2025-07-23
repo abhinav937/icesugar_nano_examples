@@ -1,0 +1,16 @@
+# PWM Microcontroller - Pin Constraints for iCESugar Nano
+# --------------------------------------------------------
+# Maps logical signals to physical FPGA pins for pwm_microcontroller project
+
+# Clock input (12 MHz from iCELink)
+set_io clk D1
+
+# UART RX pin (from host)
+set_io RX A3
+
+# UART TX pin (to host)
+set_io TX B3
+
+# PWM outputs
+set_io pwm0 B4
+set_io pwm1 C6

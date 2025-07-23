@@ -1,0 +1,7 @@
+{
+  "hostname": "abhinav@raspberrypi",
+  "port": 22,
+  "remote_dir": "~/iceSugar/pwm_microcontroller",
+  "auth_method": "key",
+  "key_path": "~/.ssh/id_rsa"
+}
