@@ -1,0 +1,7 @@
+# Pin constraints
+# Clock and UART
+set_io CLK D1    # 12 MHz clock from iCELink
+
+# LED outputs (PWM controlled)
+set_io LED_B6 B6 # Onboard LED
+set_io LED B4 # FPGA Done Led
