@@ -137,12 +137,22 @@ flash [module_name].v [module_name].pcf --force-dragdrop
 For remote development or automated builds:
 
 ```bash
-# Push and program via SSH
-ssh-push [remote_host] [module_name].v [module_name].pcf
+# Navigate to project directory
+cd src/projects/[project_name]
 
-# Example
-ssh-push my-fpga-device blinky.v blinky.pcf
+# Push and program via SSH (uses .ssh_push_config.json for connection details)
+ssh-push [module_name].v [module_name].pcf
+
+# Example for blinky project:
+cd src/projects/blinky
+ssh-push blinky.v blinky.pcf
+
+# Example for pwm_microcontroller:
+cd src/projects/pwm_microcontroller
+ssh-push pwm_microcontroller.v pwm_microcontroller.pcf
 ```
+
+Each project directory contains a `.ssh_push_config.json` file that specifies the SSH connection details (hostname, remote directory, authentication method, etc.).
 
 ## Testing
 

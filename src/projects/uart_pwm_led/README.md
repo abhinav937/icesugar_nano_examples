@@ -11,9 +11,21 @@ Controls LED brightness via UART commands on iCESugar-nano board.
 
 ## Usage
 
-1. Connect iCESugar-nano to Raspberry Pi via USB
-2. Send single bytes (0-255) to control LED brightness
-3. 0 = LED off, 255 = full brightness
+1. Build and program the design using the [Lattice_NanoIce](https://github.com/abhinav937/Lattice_NanoIce) flash tool:
+   ```bash
+   cd src/projects/uart_pwm_led
+   flash uart_pwm_led.v uart_pwm_led.pcf
+   ```
+   
+   Or use ssh-push for remote development:
+   ```bash
+   cd src/projects/uart_pwm_led
+   ssh-push uart_pwm_led.v uart_pwm_led.pcf
+   ```
+
+2. Connect iCESugar-nano to host via USB
+3. Send single bytes (0-255) to control LED brightness
+4. 0 = LED off, 255 = full brightness
 
 ## Files
 

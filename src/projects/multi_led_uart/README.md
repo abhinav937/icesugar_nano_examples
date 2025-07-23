@@ -28,9 +28,21 @@ Two-byte protocol:
 
 ## Usage
 
-1. Connect iCESugar-nano to host via USB
-2. Send two-byte commands to control individual LEDs
-3. 0 = LED off, 255 = full brightness
+1. Build and program the design using the [Lattice_NanoIce](https://github.com/abhinav937/Lattice_NanoIce) flash tool:
+   ```bash
+   cd src/projects/multi_led_uart
+   flash multi_led_uart.v multi_led_uart.pcf
+   ```
+   
+   Or use ssh-push for remote development:
+   ```bash
+   cd src/projects/multi_led_uart
+   ssh-push multi_led_uart.v multi_led_uart.pcf
+   ```
+
+2. Connect iCESugar-nano to host via USB
+3. Send two-byte commands to control individual LEDs
+4. 0 = LED off, 255 = full brightness
 
 ## Files
 
